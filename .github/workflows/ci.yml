@@ -2,16 +2,17 @@ name : ci_pipeline
 on:
   push:
     branches: [main]
-  pull_request: [main]
+  pull_request: 
+    branches: [main]
   workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name:
-        uses :
-      - name:
-        uses :
+      - name: Récuperer le code 
+        uses : actions/checkout
+      - name: installer python
+        uses : actions/setup-python
         with:
           python-version: "3.11"
       - name: installer les dependances
